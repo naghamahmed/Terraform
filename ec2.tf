@@ -32,7 +32,7 @@ resource "aws_instance" "public1" {
 resource "aws_instance" "private" {
   ami                    = data.aws_ami.ec2.id
   instance_type          = "t2.micro"
-  subnet_id              = module.network.public_subnet1_id
+  subnet_id              = module.network.private_subnet1_id
   vpc_security_group_ids = ["${module.network.sg_2}"]
 
   tags = {
